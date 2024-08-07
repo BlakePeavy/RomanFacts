@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RomanFacts.Desktop.MainPage">
+
+    <StackLayout Padding="20" VerticalOptions="Center">
+        <Label Text="Roman Fact of the Day"
+               FontSize="24"
+               HorizontalOptions="Center" />
+
+        <Picker x:Name="CategoryPicker"
+                Title="Select a category"
+                SelectedIndexChanged="OnCategoryChanged">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>history</x:String>
+                    <x:String>architecture</x:String>
+                    <x:String>culture</x:String>
+                    <x:String>famous_figures</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
+        <Label x:Name="FactLabel"
+               Text="Welcome to Roman Facts!"
+               FontSize="18"
+               Margin="20,10"
+               HorizontalOptions="Center" />
+
+        <Button Text="Refresh Fact"
+                Clicked="OnRefreshFactClicked"
+                HorizontalOptions="Center" />
+    </StackLayout>
+
+</ContentPage>
